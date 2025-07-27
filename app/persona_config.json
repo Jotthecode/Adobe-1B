@@ -1,0 +1,36 @@
+{
+  "persona": {
+    "name": "Dr. Asha Verma",
+    "role": "PhD Researcher",
+    "domain": "Computational Biology",
+    "expertise": [
+      "Machine Learning",
+      "Drug Discovery",
+      "Graph Neural Networks",
+      "Biomedical Data Analysis"
+    ],
+    "experience_level": "Advanced",
+    "information_needs": [
+      "High-level summaries of techniques",
+      "Comparative performance of models",
+      "Datasets used in research",
+      "Limitations and challenges"
+    ]
+  },
+  "job_to_be_done": {
+    "task_description": "Prepare a comprehensive literature review focusing on methodologies, datasets, and performance benchmarks",
+    "expected_output": [
+      "Well-organized summary of relevant sections",
+      "Comparative analysis of methods",
+      "Identification of datasets used across studies",
+      "Quantitative and qualitative performance metrics"
+    ],
+    "urgency_level": "High",
+    "document_types": [
+      "Research Papers",
+      "Conference Proceedings",
+      "Survey Articles"
+    ],
+    "target_audience": "Advisors, peer researchers, and publication reviewers"
+  }
+}
