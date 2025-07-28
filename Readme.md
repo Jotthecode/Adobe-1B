@@ -1,27 +1,51 @@
-This system extracts and ranks the most relevant sections from PDF documents based on a specific persona and their job-to-be-done. Built for Adobe's "Connecting the Dots" Hackathon Round 1B.
 
-## Features
-- **PDF Parsing**: Extracts structured content from PDFs using layout-aware parsing
-- **Semantic Matching**: Uses sentence embeddings to match content with persona requirements
-- **Intelligent Ranking**: Ranks sections and subsections by relevance and importance
-- **Offline Operation**: Runs completely offline with no internet dependencies
-- **Fast Processing**: Processes 3-5 documents in under 60 seconds
 
-## Architecture
-- `main.py`: Main execution logic
-- `utils/parser.py`: PDF parsing and structure extraction
-- `utils/extractor.py`: Section extraction and relevance scoring
-- `utils/ranker.py`: Subsection analysis and ranking
+```markdown
+# Adobe-1B: Persona-Based Document Intelligence
 
-## Input Format
-Place PDF files and configuration in `/app/input/`:
+This project extracts and ranks the most relevant sections from PDF documents based on a **persona** and their **job-to-be-done**. Built for **Adobe's "Connecting the Dots" Hackathon – Round 1B**.
+
+---
+
+## 📌 Problem Statement
+
+> Given a collection of PDFs, extract the sections most relevant to a specific persona's intent — **fully offline**, using models under 1GB, and executing within **60 seconds**.
+
+---
+
+## 🧠 Architecture
+
+### 1. `main.py`: Execution Logic
+- Loads config from `input/config.json`
+- Parses all PDFs in `input/`
+- Passes parsed sections to extractor and ranker
+- Saves output to `output/result.json`
+
+### 2. `utils/parser.py`: PDF Parsing
+- Extracts text blocks from PDFs with layout awareness
+- Includes metadata like font size, position, page number
+
+### 3. `utils/extractor.py`: Semantic Matching
+- Converts persona/job to embeddings
+- Computes cosine similarity with sections
+- Filters and scores top-matching sections
+
+### 4. `utils/ranker.py`: Subsection Analysis
+- Breaks down sections into finer chunks
+- Ranks refined text spans for depth analysis
+
+---
+
+## 🧾 Input Format
+
+Place PDFs and config in `input/`:
 
 ```json
 {
   "persona": "PhD Researcher in Computational Biology",
-  "job_to_be_done": "Prepare a comprehensive literature review focusing on methodologies, datasets, and performance benchmarks"
+  "job_to_be_done": "Prepare a literature review focusing on methodologies, datasets, and benchmarks"
 }
-```
+
 
 ## Output Format
 Results are saved to `/app/output/result.json`:
