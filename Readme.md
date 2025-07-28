@@ -1,6 +1,4 @@
 
-
-```markdown
 # Adobe-1B: Persona-Based Document Intelligence
 
 This project extracts and ranks the most relevant sections from PDF documents based on a **persona** and their **job-to-be-done**. Built for **Adobe's "Connecting the Dots" Hackathon – Round 1B**.
